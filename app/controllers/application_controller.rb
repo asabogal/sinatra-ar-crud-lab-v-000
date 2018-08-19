@@ -18,7 +18,6 @@ class ApplicationController < Sinatra::Base
 
   post '/posts' do
     @post = Post.create(params)
-    # binding.pry
     redirect to '/posts'
   end
 
@@ -29,7 +28,6 @@ class ApplicationController < Sinatra::Base
 
   get '/posts/:id' do
     @post = Post.find_by_id(params[:id])
-    binding.pry
     erb :show
   end
 
